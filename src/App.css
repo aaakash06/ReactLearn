@@ -10,18 +10,16 @@ input,button{
 button{
   max-width: 80px;
 }
-.row
+ .row
 {
-  text-align: left;
+text-align: left;
   padding: 10px;
   font-weight: 500;
-  /* width: 100vw */
-  width: 100vmin
-  position: relative;
-  margin-left: 270px
+  width: 100vmin;
+margin: 0 auto;
 
 }
-.main
+/* .main
 {
-  /* display: inline-block; */
-}
+  display: inline-block;
+} */

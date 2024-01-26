@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
@@ -7,12 +6,17 @@ import Items from "./assets/components/items";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import InputBox from "./assets/components/inputBox";
-
+ let date = new Date();
+ date = date.toLocaleDateString;
 let itemsData = [
   { name: "Buy Milk", date: "03/12/23" },
   {
     name: "Go To College",
-    date: "04/04/24"
+    date: "04/04/24",
+  },
+  {
+    name:'Eat'
+    ,date: date
   }
 ];
 
@@ -22,11 +26,9 @@ function App() {
       <center>
         <AppHeading></AppHeading>
 
-        <div className="main">
-          <InputBox></InputBox>
-          <Items itemsData={itemsData}></Items>
-          </div>
-        </center>
+        <InputBox></InputBox>
+        <Items itemsData={itemsData}></Items>
+      </center>
     </>
   );
 }
