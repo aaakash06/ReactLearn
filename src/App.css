@@ -1,0 +1,27 @@
+h1{
+  font-weight: 700;
+margin: 10px;
+margin-bottom: 20px;
+
+}
+input,button{
+  width: 100%;
+}
+button{
+  max-width: 80px;
+}
+.row
+{
+  text-align: left;
+  padding: 10px;
+  font-weight: 500;
+  /* width: 100vw */
+  width: 100vmin
+  position: relative;
+  margin-left: 270px
+
+}
+.main
+{
+  /* display: inline-block; */
+}
