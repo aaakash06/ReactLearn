@@ -1,6 +1,6 @@
 import Item from "./item";
 import styles from './items.module.css'
-function Items({ itemsData }) {
+function Items({itemsData,func}) {
 
 return(
 
@@ -8,7 +8,7 @@ return(
 {
 itemsData.map((item,index)=>(
 
-<Item key={index} itemData={item}></Item>
+<Item key={index} itemData={item} onDeleteFunc={func} ></Item>
 
 )
 )

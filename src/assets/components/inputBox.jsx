@@ -1,23 +1,66 @@
 import styles from "./inputBox";
+import { useState } from "react";
+function InputBox({ onAdd,error }) {
+  let [nameVal, setNameVal] = useState("");
+  let [dateVal, setDateVal] = useState("");
 
-function InputBox() {
+  function onNameChange(newName) {
+    setNameVal(newName);
+  }
+
+  function onDateChange(newDate) {
+    setDateVal(newDate);
+  }
   return (
-   
     <div className="inputBox container text-center">
       <div className="row">
         <div className="col-6">
-          <input type="text" placeholder="Enter a task" />
+          <input
+            type="text"
+            placeholder="Enter a task"
+            onChange={(e) => {
+              onNameChange(e.target.value);
+            }}
+            value={nameVal}
+          />
         </div>
         <div className="col-4">
-          <input type="date" />
+          <input
+            type="date"
+            onChange={(e) => {
+              onDateChange(e.target.value);
+            }}
+            value={dateVal}
+          />
         </div>
         <div className="col-2">
-          <button type="button" class="btn btn-success">
+          <button
+            type="button"
+            class="btn btn-success"
+            onClick={() => {
+
+
+if(nameVal && dateVal){
+  onAdd(nameVal, dateVal);
+            
+setNameVal('');
+setDateVal('');
+
+}
+else
+{
+error();
+}
+              
+
+
+            }}
+          >
             Add
           </button>
         </div>
       </div>
     </div>
-   );
+  );
 }
 export default InputBox;
