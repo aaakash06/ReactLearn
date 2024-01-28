@@ -1,5 +1,10 @@
+import { useContext } from "react";
 import Items from "./items";
-function Item({ itemData , onDeleteFunc}) {
+import { ContextApi } from "../store/context";
+function Item({ itemData }) {
+
+let onDeleteFunc = useContext(ContextApi).onDeleteFunc
+
   return (
     <div className="row">
       <div className="col-6">{itemData.name}</div>

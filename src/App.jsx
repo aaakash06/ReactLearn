@@ -6,7 +6,7 @@ import Items from "./assets/components/items";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import InputBox from "./assets/components/inputBox";
-
+import { ContextApi } from "./assets/store/context";
 
 
 function App() {
@@ -50,16 +50,26 @@ setListItems(newList)
 
   return (
     <>
+
       <center>
+      <ContextApi.Provider  value={
+{listItems,
+onAdd,
+onDeleteFunc
+}}
+
+      >
         <AppHeading></AppHeading>
 
-        <InputBox   error ={error}  onAdd = {onAdd}></InputBox>
-        <Items   itemsData={listItems} func = {onDeleteFunc}></Items>
-      </center>
-      <center>
-{errorState == true && <h2> There seems to be an error</h2> }
+        <InputBox   error ={error}  ></InputBox>
+        <Items   ></Items>
 
-      </center>
+
+{errorState == true && <h2> There seems to be an error</h2> }
+</ContextApi.Provider>
+</center>
+
+   
     </>
   );
 }

@@ -1,24 +1,20 @@
 import Item from "./item";
-import styles from './items.module.css'
-function Items({itemsData,func}) {
+import styles from "./items.module.css";
 
-return(
+import { ContextApi } from "../store/context";
+import { useContext } from "react";
 
-<div className="container text-center">
-{
-itemsData.map((item,index)=>(
+function Items() {
+  // let contextDataObject = useContext(contextApi)
 
-<Item key={index} itemData={item} onDeleteFunc={func} ></Item>
+let listItems = useContext(ContextApi).listItems;
 
-)
-)
-}
-
-</div>
-
-
-);
-
- 
+  return (
+    <div className="container text-center">
+      {listItems.map((item, index) => (
+        <Item key={index} itemData={item} ></Item>
+      ))}
+    </div>
+  );
 }
 export default Items;

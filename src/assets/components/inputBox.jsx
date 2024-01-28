@@ -1,6 +1,12 @@
+import { ContextApi } from "../store/context";
 import styles from "./inputBox";
-import { useState } from "react";
-function InputBox({ onAdd,error }) {
+import { useState,useContext } from "react";
+
+
+function InputBox({ error }) {
+  let onAdd = useContext(ContextApi).onAdd;
+
+
   let [nameVal, setNameVal] = useState("");
   let [dateVal, setDateVal] = useState("");
 
